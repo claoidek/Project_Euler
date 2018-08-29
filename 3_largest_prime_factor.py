@@ -1,3 +1,5 @@
+# Finds the largest prime factor of the number 600851475143
+
 import time
 
 start = time.clock()
@@ -11,8 +13,7 @@ while num != 1:
         largest_factor = i
     i += 2
 
-print largest_factor
-
 end = time.clock()
 
+print largest_factor
 print "Time taken: ", end-start, " s"
