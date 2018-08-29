@@ -30,7 +30,7 @@ for i in range(2,upper_bound+1):
     # Note that we not only need to track which prime factors are present, we
     # must also track the maximum number of each prime factor needed for the
     # individual divisors
-    # e.g. 8 needs three factors of 2, while 2 only needs 1
+    # e.g. 8 needs three factors of 2, while 2 only needs one
     for prime in i_factors:
         if prime in all_factors:
             if i_factors[prime] > all_factors[prime]:
