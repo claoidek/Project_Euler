@@ -9,15 +9,15 @@ start = time.clock()
 
 phi = (math.sqrt(5)+1)/2
 
-term = 1
-n = 2
+term = 0
+n = 0
 total = 0
 
 while term < 4000000:
-    if term%2==0:
-        total += term
+    total += term
     term =int((phi**n - (-phi)**-n)/math.sqrt(5))
-    n += 1
+    # Uses the fact that every third Fibonacci number is even
+    n += 3
 
 end = time.clock()
 
