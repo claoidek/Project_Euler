@@ -1,4 +1,5 @@
-# Finds the sum of all pairs of numbers
+# Finds the sum of all pairs of numbers where d(a) = b and d(b) = a
+# d(a) is defined as the sum of all proper divisors of a
 
 import time
 import math
@@ -13,6 +14,7 @@ def sum_of_proper_divisors(n):
             total += i + n/i
         i += 1
     
+    # Adds last divisor if n is a perfect square
     if i*i == n:
         total += i
 
