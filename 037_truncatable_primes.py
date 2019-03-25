@@ -36,6 +36,7 @@ only_at_start = ["2","5"]
 # Starting value ensures we only check numbers with 2 digits or more
 number = 9
 
+# The problem states that there are only 11 such primes
 while num_primes < 11:
     valid = True
     number += 2
