@@ -13,7 +13,6 @@ def is_square(n):
     return False
 
 start = time.clock()
-start = time.clock()
 
 num = 40755
 n = 143
