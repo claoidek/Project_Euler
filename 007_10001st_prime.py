@@ -4,9 +4,9 @@ import time
 
 def is_prime(num):
     for prime in primes:
-        if prime*prime>num:
+        if prime*prime > num:
             return True
-        if num%prime==0:
+        if num%prime == 0:
             return False
     return True
 

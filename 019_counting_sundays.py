@@ -47,7 +47,7 @@ sunday_firsts = 0
 
 while current_date[1:] != [30,11,2000]:
     increment_day(current_date)
-    if current_date[3]>1900 and current_date[:2] == [6,0]:
+    if current_date[3] > 1900 and current_date[:2] == [6,0]:
         sunday_firsts += 1
 
 end = time.clock()

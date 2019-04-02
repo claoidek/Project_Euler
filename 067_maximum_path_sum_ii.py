@@ -17,7 +17,7 @@ num_rows = int(0.5*(math.sqrt(8*len(triangle)+1)-1))
 # Cycles through the numbers and increases them by the largest of their two
 # upper neighbours. This effectively replaces each number in the triangle by
 # the maximum value a path can take that ends at that number. Then all we need
-# to do is find the maximuim value on the last row.
+# to do is find the maximum value on the last row.
 for i in range(1,num_rows):
     triangle[i*(i+1)/2] += triangle[i*(i-1)/2]
     for j in range(1,i):

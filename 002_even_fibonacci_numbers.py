@@ -15,7 +15,7 @@ total = 0
 
 while term < 4000000:
     total += term
-    term =int((phi**n - (-phi)**-n)/math.sqrt(5))
+    term = int((phi**n - (-phi)**-n)/math.sqrt(5))
     # Uses the fact that every third Fibonacci number is even
     n += 3
 
