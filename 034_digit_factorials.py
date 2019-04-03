@@ -12,7 +12,7 @@ def sum_of_factorials(n):
 start = time.clock()
 
 # Precomputed factorials to save time
-factorials = [1,1,2,6,24,120,720,540,40320,362880]
+factorials = [1,1,2,6,24,120,720,5400,40320,362880]
 
 total = 0
 
