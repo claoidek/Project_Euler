@@ -1,7 +1,8 @@
-# Finds the number of ways one hundred can be written as a sum of at least two
-# positive integers
+# finds the smallest value of n for which the number of ways that n objects can
+# be separated into piles is divisible by a million
 
 import time
+
 
 # This is Euler's generating function for partition numbers, which is formula 14
 # here:
@@ -15,18 +16,20 @@ def partition(n):
         total += ((-1)**(k - 1))* \
                (partition(n - (k*(3*k - 1))/2) + partition(n - (k*(3*k + 1))/2))
         k += 1
-    partitions[n] = total
-    return total
+    
+    partitions[n] = total%1000000
+    return total%1000000
 
 start = time.clock()
 
 partitions = {0:1}
 
-# The function includes the representation with only one integer, so we deduct
-# that from the total
-total = partition(100)-1
+i = 1
+
+while partition(i) != 0:
+    i += 1
 
 end = time.clock()
 
-print total
+print i
 print "Time taken: ", end-start, " s"
