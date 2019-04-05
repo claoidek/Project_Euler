@@ -1,5 +1,6 @@
 # Finds the shortest number that contains the digits of each of the triplets in
 # external_files/079_keylog.txt in order (not necessarily consecutively)
+# This code only works if there are no repeated digits
 
 import time
 import itertools
@@ -21,11 +22,10 @@ for log in logs:
     for a,b in itertools.combinations(log,2):
         digits_before[int(a)][int(b)] = 1
 
-print digits_before
+# The number of other digits each digit must appear before
 counts = [sum(x) for x in digits_before]
 
-
-print counts
+# Appends digits in the correct order, but only if they are present in the file
 for i in range(9,-1,-1):
     for index,count in enumerate(counts):
         if count == i and index in digits:
