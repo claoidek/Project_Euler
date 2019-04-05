@@ -1,5 +1,6 @@
 # Finds the minimal path sum in external_files/081_matrix.txt where only
 # movements down and to the right are permitted
+# The starting position is in the top-right corner
 
 import time
 import csv
