@@ -1,4 +1,5 @@
-# 
+# Finds the number of characters that would be saved by writing the Roman
+# numerals in external_files/089_roman.txt in their minimal form
 
 import time
 
@@ -11,25 +12,17 @@ numerals = [x.strip() for x in numerals]
 
 characters_saved = 0
 
-for index, numeral in enumerate(numerals):
-    if "VIIII" in numerals[index]:
-        numerals[index] = numerals[index].replace("VIIII","IX")
-        characters_saved += 3
-    if "IIII" in numerals[index]:
-        numerals[index] = numerals[index].replace("IIII","IV")
-        characters_saved += 2
-    if "LXXXX" in numerals[index]:
-        numerals[index] = numerals[index].replace("LXXXX","XC")
-        characters_saved += 3
-    if "XXXX" in numerals[index]:
-        numerals[index] = numerals[index].replace("XXXX","XL")
-        characters_saved += 2
-    if "DCCCC" in numerals[index]:
-        numerals[index] = numerals[index].replace("DCCCC","CM")
-        characters_saved += 3
-    if "CCCC" in numerals[index]:
-        numerals[index] = numerals[index].replace("CCCC","CD")
-        characters_saved += 2
+# The order of the replacements is significant, as we must check VIIII before
+# IIII etc.
+replacements = [["VIIII","IX"],["IIII","IV"],["LXXXX","XC"], \
+                ["XXXX","XL"],["DCCCC","CM"],["CCCC","CD"]]
+
+for index,numeral in enumerate(numerals):
+    for replacement in replacements:
+        if replacement[0] in numerals[index]:
+            numerals[index] = \
+                    numerals[index].replace(replacement[0],replacement[1])
+            characters_saved += len(replacement[0]) - len(replacement[1])
 
 end = time.clock()
 
