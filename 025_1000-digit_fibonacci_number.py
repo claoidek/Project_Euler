@@ -1,8 +1,8 @@
 # Finds the first Fibonacci number with more than 1000 digits
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 first = 1
 second = 1
@@ -16,7 +16,7 @@ while third < cutoff:
     second = third
     third = first + second
 
-end = time.clock()
+end = clock()
 
 print index
 print "Time taken: ", end-start, " s"

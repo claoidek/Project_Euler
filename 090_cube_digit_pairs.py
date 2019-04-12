@@ -2,7 +2,7 @@
 # dice such that all square numbers under 100 can be displayed
 # Note that 6 can be used for either 6 or 9 and vice versa
 
-import time
+from time import clock
 import itertools
 
 def check_validity(d1,d2):
@@ -35,7 +35,7 @@ def check_validity(d1,d2):
         return False
     return True
 
-start = time.clock()
+start = clock()
 
 valid = 0
 
@@ -63,7 +63,7 @@ for comb in itertools.combinations(pool,6):
         if check_validity(d1,d2):
             valid += 1
 
-end = time.clock()
+end = clock()
 
 # This method counts each combination twice because it differentiates between
 # the two dice, so we must divide by two

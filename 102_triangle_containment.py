@@ -1,7 +1,7 @@
 # Finds the number of triangles defined in the file
 # external_files/102_triangles.txt that contain the origin
 
-import time
+from time import clock
 import numpy
 
 # We define a vector pointing along the line |ab| and two more pointing from a
@@ -27,7 +27,7 @@ def contains_origin(A,B,C):
         return False
     return True
 
-start = time.clock()
+start = clock()
 
 with open("external_files/102_triangles.txt") as f:
     lines = [x.strip() for x in f.readlines()]
@@ -43,7 +43,7 @@ for triangle in points:
     if contains_origin(A,B,C):
         total += 1
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

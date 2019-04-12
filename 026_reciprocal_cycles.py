@@ -3,7 +3,7 @@
 # This code works on the basis that for any prime d>5, the length of the decimal
 # expansion will be the smallest n for which (10^n - 1)%d == 0.
 
-import time
+from time import clock
 
 def is_prime(num):
     if num == 1:
@@ -19,7 +19,7 @@ def is_prime(num):
         i += 2
     return True
 
-start = time.clock()
+start = clock()
 
 max_period = 0
 max_value = 0
@@ -34,7 +34,7 @@ for d in range(7, 1000):
             max_value = d
 
 
-end = time.clock()
+end = clock()
 
 print max_value
 print "Time taken: ", end-start, " s"

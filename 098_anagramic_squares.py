@@ -3,7 +3,7 @@
 # in the same file, which is mapped to a different square using the same
 # mapping.
 
-import time
+from time import clock
 from csv import reader
 from itertools import combinations
 from math import sqrt
@@ -35,7 +35,7 @@ def mapping(word1,word2):
     word1_pattern = pattern(word1)
     return tuple(word1_pattern[word1.index(x)] for x in word2)
 
-start = time.clock()
+start = clock()
 
 with open('external_files/098_words.txt', 'rb') as f:
     words = list(reader(f))[0]
@@ -131,7 +131,7 @@ for pair in square_anagrams:
     if max(pair) > max_square:
         max_square = max(pair)
 
-end = time.clock()
+end = clock()
 
 print max_square
 print "Time taken: ", end-start, " s"

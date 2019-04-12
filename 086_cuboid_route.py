@@ -2,7 +2,7 @@
 # no side greater than M, where the shortest path along the faces of the cube
 # between opposite corners has an integer length 
 
-import time
+from time import clock
 import math
 
 def is_square(integer):
@@ -15,7 +15,7 @@ def is_square(integer):
 def combinations(x,yplusz):
     return min(x + 1,yplusz) - math.ceil(yplusz/2.0)
 
-start = time.clock()
+start = clock()
 
 x = 0
 solutions = 0
@@ -34,7 +34,7 @@ while solutions < threshold:
         if is_square(x**2 + yplusz**2):
             solutions += combinations(x,yplusz)
 
-end = time.clock()
+end = clock()
     
 print x
 print "Time taken: ", end-start, " s"

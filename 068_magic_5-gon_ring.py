@@ -1,7 +1,7 @@
 # Finds the maximum 16-digit string that forms a solution to a magic 5-gon ring
 # Explanation at https://projecteuler.net/problem=68
 
-import time
+from time import clock
 import itertools
 
 def next_index(index):
@@ -15,7 +15,7 @@ def check_ring(ins,outs):
             return False
     return True
 
-start = time.clock()
+start = clock()
 
 outs = [None]*5
 ins = [None]*5
@@ -52,7 +52,7 @@ for rep in reps:
     if rep > maximum:
         maximum = rep
 
-end = time.clock()
+end = clock()
 
 print maximum
 print "Time taken: ", end-start, " s"

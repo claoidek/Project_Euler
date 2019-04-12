@@ -4,11 +4,11 @@
 # Both other points at integer coordinates
 # All coordinates in the range 0-50
 
-import time
+from time import clock
 import itertools
 from fractions import Fraction
 
-start = time.clock()
+start = clock()
 
 max_coord = 50
 # We can work out the number of triangles where the right angle is situated on
@@ -51,7 +51,7 @@ for P in itertools.combinations_with_replacement(coord_range,2):
             Q[0] -= slope.numerator
             Q[1] += slope.denominator
 
-end = time.clock()
+end = clock()
 
 print right_angles
 print "Time taken: ", end-start, " s"

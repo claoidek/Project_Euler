@@ -3,10 +3,10 @@
 # Returns the sum of the ASCII values in the decrypted text
 
 import csv
-import time
+from time import clock
 import itertools
 
-start = time.clock()
+start = clock()
 
 with open('external_files/059_cipher.txt', 'r') as f:
     encrypted = list(csv.reader(f))[0]
@@ -31,7 +31,7 @@ for product in itertools.product(limits,limits,limits):
             total += ord(letter)
         break
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

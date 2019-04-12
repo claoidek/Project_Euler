@@ -1,7 +1,7 @@
 # Finds the first odd composite number that cannot be written as the sum of a
 # prime and twice a square.
 
-import time
+from time import clock
 
 def is_prime(num):
     for prime in primes:
@@ -12,7 +12,7 @@ def is_prime(num):
             return False
     return True
 
-start = time.clock()
+start = clock()
 
 primes = [2,3,5,7]
 
@@ -32,7 +32,7 @@ while not found:
         found = True
 
 
-end = time.clock()
+end = clock()
 
 print num
 print "Time taken: ", end-start, " s"

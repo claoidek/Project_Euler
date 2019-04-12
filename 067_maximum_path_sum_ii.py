@@ -1,10 +1,10 @@
 # Calculates the maximum value path from the top to the bottom of the triangle
 # in external_files/067_triangle.txt
 
-import time
+from time import clock
 import math
 
-start = time.clock()
+start = clock()
 
 f = open("external_files/067_triangle.txt","r")
 triangle = [int(x) for x in f.read().split()]
@@ -24,7 +24,7 @@ for i in range(1,num_rows):
         triangle[i*(i+1)/2+j] += max(triangle[i*(i-1)/2+j],triangle[i*(i-1)/2+j-1])
     triangle[i*(i+1)/2+i] = triangle[i*(i-1)/2+i-1] + triangle[i*(i+1)/2+i]
 
-end = time.clock()
+end = clock()
 
 print max(triangle[-num_rows:])
 print "Time taken: ", end-start, " s"

@@ -2,7 +2,7 @@
 # sqrt(N) is odd
 
 import math
-import time
+from time import clock
 
 # Finds the period of the continued fraction representation of sqrt(num)
 # Uses the algorithm found here:
@@ -27,7 +27,7 @@ def is_square(integer):
         return True
     return False
     
-start = time.clock()
+start = clock()
 
 total = 0
 
@@ -36,7 +36,7 @@ for i in range(2,10001):
         if period(i)%2 == 1:
             total += 1
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

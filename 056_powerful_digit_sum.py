@@ -1,11 +1,11 @@
 # Finds the values of a,b<100 that maximise the sum of the digits of a^b
 
-import time
+from time import clock
 
 def sum_digits(num):
     return sum([int(x) for x in str(num)])
 
-start = time.clock()
+start = clock()
 
 max_sum = 0
 
@@ -15,7 +15,7 @@ for a in range(1,100):
         if sum_ab > max_sum:
             max_sum = sum_ab
 
-end = time.clock()
+end = clock()
 
 print max_sum
 print "Time taken: ", end-start, " s"

@@ -3,7 +3,7 @@
 # The program returns the number of words with a score that is a triangular
 # number
 
-import time
+from time import clock
 import math
 
 # Simple test for square numbers
@@ -13,7 +13,7 @@ def is_square(n):
         return True
     return False
 
-start = time.clock()
+start = clock()
 
 f = open("external_files/042_words.txt","r")
 words = f.read().split(",")
@@ -27,7 +27,7 @@ for word in words:
     if is_square(8*score + 1):
         total += 1
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

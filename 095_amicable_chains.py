@@ -1,9 +1,9 @@
 # Finds the smallest member of the longest chain of amicable numbers with no
 # member exceeding one million
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 upper_limit = 10**6
 sum_of_divisors = [1 for i in range(upper_limit + 1)]
@@ -41,7 +41,7 @@ for i in range(1,upper_limit+1):
         longest_length = length
         longest_chain = list(chain)
 
-end = time.clock()
+end = clock()
 
 print min(longest_chain)
 print "Time taken: ", end-start, " s"

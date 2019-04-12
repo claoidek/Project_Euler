@@ -9,7 +9,7 @@
 # will be >1000000 if multiplied by the next prime
 # This maximised the number of prime factors, and hence, gives us our answer
 
-import time
+from time import clock
 
 def is_prime(num):
     if num == 1:
@@ -32,7 +32,7 @@ def is_prime(num):
         i += 2
     return True
 
-start = time.clock()
+start = clock()
 
 primes = [2]
 total = 2
@@ -44,7 +44,7 @@ while(i*total <= 1000000):
         primes.append(i)
     i += 2
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

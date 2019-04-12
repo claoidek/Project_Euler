@@ -4,12 +4,12 @@
 # upper bound is set to ~50000, but I don't have a theoretical justification for
 # a bound that low.
 
-import time
+from time import clock
 
 def sum_of_factorials(n):
     return sum([factorials[int(x)] for x in str(n)])
 
-start = time.clock()
+start = clock()
 
 # Precomputed factorials to save time
 factorials = [1,1,2,6,24,120,720,5040,40320,362880]
@@ -22,7 +22,7 @@ for i in range(3,factorials[9]*7):
     if i == sum_of_factorials(i):
         total += i
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

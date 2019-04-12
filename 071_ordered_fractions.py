@@ -1,9 +1,9 @@
 # Finds the numerator of the largest fraction < 3/7,
 # with a denominator <= 1000000
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 max_num = 0
 max_denom = 1
@@ -21,7 +21,7 @@ for denom in range(1000001):
             max_num = num
             max_denom = denom
 
-end = time.clock()
+end = clock()
 
 print max_num
 print "Time taken: ", end-start, " s"

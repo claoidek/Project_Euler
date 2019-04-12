@@ -3,7 +3,7 @@
 # This program finds all starting numbers under ten million whose chains
 # terminate in a loop containing the number 89
 
-import time
+from time import clock
 from itertools import combinations_with_replacement
 from collections import Counter
 from math import factorial
@@ -23,7 +23,7 @@ def permutations(comb):
         total *= factorial(i)
     return factorial(len(comb))/total
 
-start = time.clock()
+start = clock()
 
 total = 0
 # All chains starting with a positive integer end in either 1 or 89
@@ -55,7 +55,7 @@ for comb in combinations_with_replacement(range(10),max_digits):
     if chain_ends[square_and_add(comb)] == 89:
         total += permutations(comb)
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

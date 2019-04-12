@@ -2,10 +2,10 @@
 # Uses the closed form for Fibonacci numbers:
 # F(n) = (phi^n - (-phi)^-n)/sqrt(5)
 
-import time
+from time import clock
 import math
 
-start = time.clock()
+start = clock()
 
 phi = (math.sqrt(5)+1)/2
 
@@ -19,7 +19,7 @@ while term < 4000000:
     # Uses the fact that every third Fibonacci number is even
     n += 3
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

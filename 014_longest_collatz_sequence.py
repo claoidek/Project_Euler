@@ -2,7 +2,7 @@
 # sequence (en.wikipedia.org/wiki/Collatz_conjecture)
 # Another slow one. Possibly improve using memoisation?
 
-import time
+from time import clock
 
 def update(num):
     if num%2 == 0:
@@ -16,7 +16,7 @@ def collatz_sequence_length(num):
         length += 1
     return length
 
-start = time.clock()
+start = clock()
 
 max_length = 0
 max_n = 0
@@ -28,7 +28,7 @@ for n in range(1,upper_bound+1):
         max_length = length
         max_n = n
 
-end = time.clock()
+end = clock()
 
 print max_n
 print "Time taken: ", end-start, " s"

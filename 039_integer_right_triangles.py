@@ -1,9 +1,9 @@
 # Finds the value of p<=1000 for which the number of right angle triangles with
 # perimeter p is maximised
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 num_sols = {}
 # List of squares for quick lookup
@@ -24,7 +24,7 @@ for a in range(2,500):
                 num_sols[p] = 1
 
 
-end = time.clock()
+end = clock()
 
 print max(num_sols, key = num_sols.get)
 print "Time taken: ", end-start, " s"

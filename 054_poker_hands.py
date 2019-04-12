@@ -2,7 +2,7 @@
 # determines how many of them player 1 wins
 
 import csv
-import time
+from time import clock
 
 def hand_identifier(cards):
     # Map for converting all cards to a numeric value
@@ -163,7 +163,7 @@ def least_common(lst):
 def most_common(lst):
         return max(set(lst), key=lst.count)
 
-start = time.clock()
+start = clock()
 
 count = 0
 
@@ -186,7 +186,7 @@ with open('external_files/054_poker.txt', 'r') as f:
                 count += kickersa[i]>kickersb[i]
                 break
         
-end = time.clock()
+end = clock()
 
 print count
 print "Time taken: ", end-start, " s"

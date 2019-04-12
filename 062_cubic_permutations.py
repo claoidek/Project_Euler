@@ -1,9 +1,9 @@
 # Finds the first cube for which four other permutations of its digits are also
 # cubes
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 # Dictionary indexed by a sorted tuple of the cube's digits
 # The value is a list of two numbers
@@ -23,7 +23,7 @@ while cube_perms[key][1] != 5:
     else:
         cube_perms[key] = [cube,1]
 
-end = time.clock()
+end = clock()
 
 print cube_perms[key][0]
 print "Time taken: ", end-start, " s"

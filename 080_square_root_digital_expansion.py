@@ -1,10 +1,10 @@
 # Finds the sum of the first hundred decimal digits in all of the irrational
 # square roots of the first hundred natural numbers
 
-import time
+from time import clock
 import decimal
 
-start = time.clock()
+start = clock()
 
 squares = [x*x for x in range(11)]
 
@@ -18,7 +18,7 @@ for i in range(101):
         # Add all of the first 101 characters apart from the decimal point
         total += sum([int(x) for x in str(root)[:101] if x != "."])
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

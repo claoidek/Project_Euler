@@ -15,7 +15,7 @@
 # a(1) = 1
 # This allows us to generate r and b until we get r + b > 10**12
 
-import time
+from time import clock
 from math import sqrt
 
 def update_red(a_minus_2,a_minus_1):
@@ -24,7 +24,7 @@ def update_red(a_minus_2,a_minus_1):
 def update_blue(red_disks):
     return int((sqrt(8*red_disks**2 + 1) + 2*red_disks + 1)/2)
 
-start = time.clock()
+start = clock()
 
 a_minus_2 = 0
 a_minus_1 = 1
@@ -37,7 +37,7 @@ while red_disks + blue_disks <= 10**12:
     red_disks = update_red(a_minus_2,a_minus_1)
     blue_disks = update_blue(red_disks)
 
-end = time.clock()
+end = clock()
 
 print blue_disks
 print "Time taken: ", end-start, " s"

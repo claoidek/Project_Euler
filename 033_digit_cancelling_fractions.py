@@ -1,7 +1,7 @@
 # Finds the denominator of the product of all fractions that satisfy the
 # cancelling method described at https://projecteuler.net/problem=33
 
-import time
+from time import clock
 from fractions import Fraction
 
 # Checks if cancelling two of the digits maintains the value of the fraction
@@ -15,7 +15,7 @@ def cancel(a,b):
         if Fraction(a,b) == canceled_frac:
             return True
 
-start = time.clock()
+start = clock()
 
 valid_fractions = []
 
@@ -28,7 +28,7 @@ product = 1
 for a,b in valid_fractions:
     product *= Fraction(a,b)
 
-end = time.clock()
+end = clock()
 
 print product.denominator
 print "Time taken: ", end-start, " s"

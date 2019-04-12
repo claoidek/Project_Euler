@@ -1,9 +1,9 @@
 # Finds the number of characters that would be saved by writing the Roman
 # numerals in external_files/089_roman.txt in their minimal form
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 with open("external_files/089_roman.txt") as f:
     numerals = f.readlines()
@@ -24,7 +24,7 @@ for index,numeral in enumerate(numerals):
                     numerals[index].replace(replacement[0],replacement[1])
             characters_saved += len(replacement[0]) - len(replacement[1])
 
-end = time.clock()
+end = clock()
 
 print characters_saved
 print "Time taken: ", end-start, " s"

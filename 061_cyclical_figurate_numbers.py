@@ -3,7 +3,7 @@
 # Additionally, one of each number must be triangle, square, pentagonal,
 # hexagonal, heptagonal, and octagonal.
 
-import time
+from time import clock
 import itertools
 
 # Finds all 4-digit numbers from each of the six categories
@@ -32,7 +32,7 @@ def match_ends(root, index):
             return match
     return None
 
-start = time.clock()
+start = clock()
 
 # Stores all the different categories of numbers
 allnums = [[],[],[],[],[],[]]
@@ -70,7 +70,7 @@ for perm in itertools.permutations([1,2,3,4,5]):
     if found:
         break
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

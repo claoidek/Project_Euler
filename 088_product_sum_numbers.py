@@ -3,7 +3,7 @@
 # More information on product-sum numbers can be found here:
 # https://projecteuler.net/problem=88
 
-import time
+from time import clock
 import math
 
 def set_product(set_in):
@@ -12,7 +12,7 @@ def set_product(set_in):
         total *= i
     return total
 
-start = time.clock()
+start = clock()
 
 max_k = 12000
 # For any k, 2k is a product-sum number with a set of 2, k and (k - 2) 1's
@@ -67,7 +67,7 @@ for num_factors in range(3,max_factors + 1):
             if set_length <= max_k and i*product < min_found[set_length - 2]:
                  min_found[set_length - 2] = i*product
 
-end = time.clock()
+end = clock()
 
 print sum(set(min_found))
 print "Time taken: ", end-start, " s"

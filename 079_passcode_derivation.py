@@ -2,10 +2,10 @@
 # external_files/079_keylog.txt in order (not necessarily consecutively)
 # This code only works if there are no repeated digits
 
-import time
+from time import clock
 import itertools
 
-start = time.clock()
+start = clock()
 
 with open('external_files/079_keylog.txt') as f:
     logs = f.read().splitlines()
@@ -31,7 +31,7 @@ for i in range(9,-1,-1):
         if count == i and index in digits:
             password.append(index)
 
-end = time.clock()
+end = clock()
 
 print "".join([str(x) for x in password])
 print "Time taken: ", end-start, " s"

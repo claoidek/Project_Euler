@@ -7,7 +7,7 @@
 # It's pretty slow but improving it would involve implementing an entirely
 # different algorithm so this will do for now
 
-import time
+from time import clock
 
 def get_grid(grid_number):
     new_grid = list(lines[grid_number*10-9:grid_number*10])
@@ -77,7 +77,7 @@ def solve(grid):
             if check_validity(grid,cell_num):
                 index += 1
 
-start = time.clock()
+start = clock()
 
 with open("external_files/096_sudoku.txt") as f:
     lines = f.readlines()
@@ -93,7 +93,7 @@ for grid_number in range(1,num_grids+1):
     solve(grid)
     total += grid[0][0]*100 + grid[0][1]*10 + grid[0][2]
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

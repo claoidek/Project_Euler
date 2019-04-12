@@ -3,17 +3,17 @@
 # This is equivalent to 40 choose 20, so we can use nCr
 # (en.wikipedia.org/wiki/Combination)
 
-import time
+from time import clock
 import math
 
-start = time.clock()
+start = clock()
 
 x = 20
 y = 20
 
 nCr = math.factorial(x+y)/(math.factorial(x)*math.factorial(y))
 
-end = time.clock()
+end = clock()
 
 print nCr
 print "Time taken: ", end-start, " s"

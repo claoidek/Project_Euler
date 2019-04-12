@@ -8,9 +8,9 @@
 # 18  5  4  3 12
 # 17 16 15 14 13
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 spiral_width = 1001
 current_width = 3
@@ -22,7 +22,7 @@ while current_width <= spiral_width:
     current_number += current_width*4 - 4
     current_width += 2
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

@@ -2,7 +2,7 @@
 # that the concatened number abc contains each of the digits from 1 to 9 
 # exactly once (and no 0's).
 
-import time
+from time import clock
 
 def is_pandigital(string):
     # A number fits our criteria if its length remains unchanged after removing
@@ -19,7 +19,7 @@ def find_products(len_a,len_b,len_prod):
             if is_pandigital(str(a)+str(b)+str(a*b)):
                 products.add(a*b)
 
-start = time.clock()
+start = clock()
 
 products = set()
 
@@ -28,7 +28,7 @@ products = set()
 find_products(2,3,4)
 find_products(1,4,4)
 
-end = time.clock()
+end = clock()
 
 print sum(products)
 print "Time taken: ", end-start, " s"

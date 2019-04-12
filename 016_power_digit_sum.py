@@ -1,6 +1,6 @@
 # Calculates the sum of the digits of 2^1000
 
-import time
+from time import clock
 
 def sum_of_digits(num):
     total = 0
@@ -8,12 +8,12 @@ def sum_of_digits(num):
         total += int(digit)
     return total
 
-start = time.clock()
+start = clock()
 
 num = 2**1000
 answer = sum_of_digits(num)
 
-end = time.clock()
+end = clock()
 
 print answer
 print "Time taken: ", end-start, " s"

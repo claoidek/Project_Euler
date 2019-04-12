@@ -6,7 +6,7 @@
  # It would be improved by finding a method to convert the nth convergent into
  # the (n+1)th convergent without recalculating all the terms
 
-import time
+from time import clock
 import math
 from fractions import Fraction
 
@@ -46,7 +46,7 @@ def find_smallest_solution(D):
         x_y = big_frac(terms)
     return x_y.numerator
 
-start = time.clock()
+start = clock()
 
 maximum = 0
 max_D = 0
@@ -58,7 +58,7 @@ for D in range(1001):
             maximum = x
             max_D = D
 
-end = time.clock()
+end = clock()
 
 print max_D
 print "Time taken: ", end-start, " s"

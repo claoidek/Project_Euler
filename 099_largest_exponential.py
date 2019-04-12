@@ -3,10 +3,10 @@
 # We use the fact that if a^b > c^d, then b*log(a) > d*log(c), which is much
 # easier to calculate
 
-import time
+from time import clock
 from math import log
 
-start = time.clock()
+start = clock()
 
 with open("external_files/099_base_exp.txt") as f:
     lines = f.readlines()
@@ -25,7 +25,7 @@ for index,[base,exp] in enumerate(base_exps):
         biggest = term
         line_number = index + 1
 
-end = time.clock()
+end = clock()
 
 print line_number
 print "Time taken: ", end-start, " s"

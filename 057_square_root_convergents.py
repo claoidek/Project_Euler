@@ -7,10 +7,10 @@
 # ...
 # 1 + 1/(2 + 1/(2 + 1/(2 + ... )))
 
-import time
+from time import clock
 from fractions import Fraction
 
-start = time.clock()
+start = clock()
 
 frac = Fraction(1+0.5)
 total = 0
@@ -20,7 +20,7 @@ for i in range(2,1001):
     if len(str(frac.numerator)) > len(str(frac.denominator)):
         total += 1
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

@@ -1,9 +1,9 @@
 # Finds the smallest number x such that x,2x,3x,...,6x all contain the same
 # digits in different orders.
 
-import time
+from time import clock
 
-start = time.clock()
+start = clock()
 
 found = False
 
@@ -17,7 +17,7 @@ while not found:
             break
     num += 1
 
-end = time.clock()
+end = clock()
 
 print num - 1
 print "Time taken: ", end-start, " s"

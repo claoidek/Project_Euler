@@ -1,7 +1,7 @@
 # Finds the first number that can be written as a sum of primes over 5000
 # different ways
 
-import time
+from time import clock
 
 def prime_sieve(n):
     prime = [True for i in range(n + 1)]
@@ -42,7 +42,7 @@ def partition(n):
     partitions[n] = total
     return total
 
-start = time.clock()
+start = clock()
 
 partitions = {0:1}
 sums = {1:0}
@@ -56,7 +56,7 @@ i = 2
 while partition(i) <= 5000:
     i += 1
 
-end = time.clock()
+end = clock()
 
 print i
 print "Time taken: ", end-start, " s"

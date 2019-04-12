@@ -11,7 +11,7 @@
 # This one is slow due to all the prime-checking. Will be significantly improved
 # if there's a faster way to check.
 
-import time
+from time import clock
 
 def is_prime(num):
     if num <= 1:
@@ -27,7 +27,7 @@ def is_prime(num):
         i += 2
     return True
 
-start = time.clock()
+start = clock()
 
 spiral_width = 3
 last_num = 9
@@ -44,7 +44,7 @@ while(float(primes)/diag_nums) > 0.1:
     
     last_num += 4*spiral_width - 4
 
-end = time.clock()
+end = clock()
 
 print spiral_width
 print "Time taken: ", end-start, " s"

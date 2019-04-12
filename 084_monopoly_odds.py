@@ -44,7 +44,7 @@
 #   38  T2
 #   39  H2
 
-import time
+from time import clock
 import random
 
 # Draws a card a puts it at the bottom of the deck
@@ -92,7 +92,7 @@ def CH_outcome(square,card):
     if card == 10:
         return square - 3
     
-start = time.clock()
+start = clock()
 
 dice_sides = 4
 
@@ -146,7 +146,7 @@ for i in range(turns):
     landed_on[square] += 1
     end_turn = False
 
-end = time.clock()
+end = clock()
 
 print "".join([str(x) for x \
         in sorted(range(len(landed_on)),key=lambda i:-landed_on[i])[:3]])

@@ -1,7 +1,7 @@
 # Finds the first set of four consecutive numbers that have four distinct prime
 # factors, and returns the first in that sequence
 
-import time
+from time import clock
 
 # Finds the number of distinct prime factors
 # We cycle through primes until we find a factor
@@ -36,7 +36,7 @@ def num_prime_factors(num):
     dictionary[original] = factors
     return len(factors)
 
-start = time.clock()
+start = clock()
 
 primes = [2]
 # Dictionary of all numbers tested so far, and the set of their unique factors
@@ -52,7 +52,7 @@ while num_consecutive < num_factors:
     else:
         num_consecutive = 0
 
-end = time.clock()
+end = clock()
 
 print num - num_factors + 1
 print "Time taken: ", end-start, " s"

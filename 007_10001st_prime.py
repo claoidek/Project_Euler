@@ -1,6 +1,6 @@
 # Finds the 10001st prime
 
-import time
+from time import clock
 
 def is_prime(num):
     for prime in primes:
@@ -10,7 +10,7 @@ def is_prime(num):
             return False
     return True
 
-start = time.clock()
+start = clock()
 
 n = 10001
 primes_found = 1
@@ -23,7 +23,7 @@ while primes_found < n:
         primes.append(candidate_prime)
         primes_found += 1
 
-end = time.clock()
+end = clock()
 
 print candidate_prime
 print "Time taken: ", end-start, " s"

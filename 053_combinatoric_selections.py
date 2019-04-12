@@ -1,13 +1,13 @@
 # Finds the number of combinations of r and n, where 1<=n<=100 and r<=n such
 # that nCr > 1000000
 
-import time
+from time import clock
 import math
 
 def nCr(n,r):
     return math.factorial(n)/(math.factorial(r)*math.factorial(n-r))
 
-start = time.clock()
+start = clock()
 
 total = 0
 
@@ -31,7 +31,7 @@ for n in range(23,101):
     if n%2 == 1:
         total -= 1
 
-end = time.clock()
+end = clock()
 
 print total
 print "Time taken: ", end-start, " s"

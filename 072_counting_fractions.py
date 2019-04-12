@@ -2,7 +2,7 @@
 # This is the same as finding the length of the Farey sequence of order 1000000
 # https://en.wikipedia.org/wiki/Farey_sequence
 
-import time
+from time import clock
 
 # We use a recursive formula to find the length of the Farey sequence
 # The details of this formula are here:
@@ -20,13 +20,13 @@ def farey(n):
         base -= new_farey
     return base
 
-start = time.clock()
+start = clock()
 
 fdict = {1:2}
 # The Farey sequence includes 0 and 1, so we subtract 2 to account for them
 answer = farey(1000000)-2
 
-end = time.clock()
+end = clock()
 
 print answer
 print "Time taken: ", end-start, " s"

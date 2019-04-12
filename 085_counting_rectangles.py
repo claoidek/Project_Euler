@@ -1,7 +1,7 @@
 # Finds the area of a grid that contains as close to two million subrectangles
 # as possible
 
-import time
+from time import clock
 
 def sub_rectangles(m,n):
     total = 0
@@ -13,7 +13,7 @@ def sub_rectangles(m,n):
                 return total
     return total
 
-start = time.clock()
+start = clock()
 
 min_solution_diff = 999999
 num_solutions = 2000000
@@ -25,7 +25,7 @@ for m in range(1,101):
             min_solution_diff = abs(num_solutions - solutions)
             answer = m*n
 
-end = time.clock()
+end = clock()
 
 print answer
 print "Time taken: ", end-start, " s"

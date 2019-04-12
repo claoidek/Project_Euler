@@ -14,7 +14,7 @@
 # numbers n is relatively prime to
 # For this reason, we begin our searching at sqrt(10000000)
 
-import time
+from time import clock
 import itertools
 import math
 
@@ -30,7 +30,7 @@ def prime_sieve(n):
         if prime[p]:
             primes.append(p)
 
-start = time.clock()
+start = clock()
 
 primes = []
 prime_sieve(5000)
@@ -61,7 +61,7 @@ for a in primes[pivot-1::-1]:
                 min_n = n
                 min_diff = b - a
 
-end = time.clock()
+end = clock()
 
 print min_n
 print "Time taken: ", end-start, " s"
