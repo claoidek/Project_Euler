@@ -40,8 +40,8 @@ def neighbours(node):
 
 def reconstruct_path(came_from,current_node):
     total_path = [current_node]
-    while repr(current_node) in came_from:
-        current_node = came_from[repr(current_node)]
+    while tuple(current_node) in came_from:
+        current_node = came_from[tuple(current_node)]
         total_path.insert(0,current_node)
     return total_path
 
@@ -55,17 +55,17 @@ def a_star(beginning,goal):
 
     for x in range(len(rows)):
         for y in range(len(rows)):
-            gscore[repr([x,y])] = infinity
-            fscore[repr([x,y])] = infinity
-    gscore[repr(beginning)] = 0
-    fscore[repr(beginning)] = cost_estimate(beginning,goal)
+            gscore[tuple([x,y])] = infinity
+            fscore[tuple([x,y])] = infinity
+    gscore[tuple(beginning)] = 0
+    fscore[tuple(beginning)] = cost_estimate(beginning,goal)
 
     while bool(open_set):
         min_fscore = infinity
 
         for node in open_set:
-            if fscore[repr(node)] < min_fscore:
-                min_fscore = fscore[repr(node)]
+            if fscore[tuple(node)] < min_fscore:
+                min_fscore = fscore[tuple(node)]
                 current_node = node
 
         if current_node == goal:
@@ -78,17 +78,17 @@ def a_star(beginning,goal):
             if neighbour in closed_set:
                 continue
 
-            tentative_gscore = gscore[repr(current_node)] + \
+            tentative_gscore = gscore[tuple(current_node)] + \
                     rows[neighbour[1]][neighbour[0]]
 
             if neighbour not in open_set:
                 open_set.append(neighbour)
-            elif tentative_gscore >= gscore[repr(neighbour)]:
+            elif tentative_gscore >= gscore[tuple(neighbour)]:
                 continue
 
-            came_from[repr(neighbour)] = current_node
-            gscore[repr(neighbour)] = tentative_gscore
-            fscore[repr(neighbour)] = gscore[repr(neighbour)] + \
+            came_from[tuple(neighbour)] = current_node
+            gscore[tuple(neighbour)] = tentative_gscore
+            fscore[tuple(neighbour)] = gscore[tuple(neighbour)] + \
                     cost_estimate(neighbour,goal)
 
 start = clock()
