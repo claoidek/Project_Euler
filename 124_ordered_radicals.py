@@ -5,16 +5,11 @@ from time import clock
 import math
 
 def prime_sieve(n):
-    prime = [True for i in range(n + 1)]
-    p = 2
-    while p*p <= n: 
-        if prime[p] == True:
-            for i in range(p*2,n + 1,p):
-                prime[i] = False
-        p += 1
-    for p in range(2,n):
-        if prime[p]:
-            primes.append(p)
+    sieve = [True] * n
+    for i in range(3,int(n**0.5)+1,2):
+        if sieve[i]:
+            sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
+    return [2] + [i for i in range(3,n,2) if sieve[i]]
 
 # Takes in a set of lists of factors with identical length n. Computes and
 # stores the product of these factors, along with the product of the distinct
@@ -42,8 +37,7 @@ start = clock()
 upper_limit = 100000
 # Index of the term we're looking for in the final sorted list
 term = 10000
-primes = []
-prime_sieve(upper_limit + 1)
+primes = prime_sieve(upper_limit + 1)
 
 # The product of the distinct prime factors of a prime is just the prime itself
 radicals = {1:1}
