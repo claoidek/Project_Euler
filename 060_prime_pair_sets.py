@@ -7,16 +7,11 @@ from time import clock
 import itertools
 
 def prime_sieve(n):
-    prime = [True for i in range(n+1)]
-    p = 2
-    while p*p <= n: 
-        if prime[p] == True:
-            for i in range(p * 2, n+1, p):
-                prime[i] = False
-        p += 1
-    for p in range(2,n):
-        if prime[p]:
-            primes.append(p)
+    sieve = [True] * n
+    for i in range(3,int(n**0.5)+1,2):
+        if sieve[i]:
+            sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
+    return [2] + [i for i in range(3,n,2) if sieve[i]]
 
 def is_prime(num):
     if num in primes:
@@ -39,7 +34,7 @@ def sum_of_digits(num):
 
 start = clock()
 
-primes = []
+primes = prime_sieve(8390)
 primes_0 = [3]
 primes_1 = [3]
 primes_2 = [2,3]
@@ -48,7 +43,6 @@ primes_2 = [2,3]
 # This figure needs to be bigger than the largest prime in the final answer,
 # but otherwise the smaller the better
 # It's set to the optimal value here as it significantly improves the runtime
-prime_sieve(8390)
 
 prime_pairs = {3:set()}
 prime_triplets = {}
