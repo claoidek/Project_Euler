@@ -4,10 +4,10 @@
 # largest to smallest, and testing if they can be written as concatenated
 # products
 
-from time import clock
+import time
 import itertools
 
-start = clock()
+start = time.time()
 
 found = False
 
@@ -42,7 +42,7 @@ for perm in itertools.permutations([9,8,7,6,5,4,3,2,1]):
     if found:
         break
 
-end = clock()
+end = time.time()
 
-print "".join([str(x) for x in perm])
-print "Time taken: ", end-start, " s"
+print("".join([str(x) for x in perm]))
+print("Time taken: ", end-start, "s", sep="")

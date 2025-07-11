@@ -1,7 +1,7 @@
 # Finds the sum of the digits in the numerator of the 100th convergent of the
 # continued fraction for e
 
-from time import clock
+import time
 from fractions import Fraction
 
 # Contructs the convergent for the given terms of the continued fraction
@@ -24,11 +24,11 @@ def e_terms(n):
             double += 1
     return out
         
-start = clock()
+start = time.time()
 
 total = sum([int(x) for x in str(big_frac(e_terms(100)).numerator)])
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

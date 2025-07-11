@@ -6,14 +6,14 @@
 # 1292 + 2921 = 4213
 # 4213 + 3124 = 7337, which is a palindrome
 
-from time import clock
+import time
 
 def is_palindrome(num):
     if str(num)==str(num)[::-1]:
         return True
     return False
 
-start = clock()
+start = time.time()
 
 total = 9999
 
@@ -29,7 +29,7 @@ for i in range(1,10000):
             total -= 1
             break
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

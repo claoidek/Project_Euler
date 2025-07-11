@@ -3,7 +3,7 @@
 # The starting position can be anywhere in the leftmost column and the ending
 # position can be anywhere in the rightmost column
 
-from time import clock
+import time
 import csv
 
 def get_data():
@@ -14,7 +14,7 @@ def get_data():
             rows.append([int(x) for x in line])
     return rows
 
-start = clock()
+start = time.time()
 
 rows = get_data()
 
@@ -52,7 +52,7 @@ for row in rows:
     if row[0] < min_path:
         min_path = row[0]
 
-end = clock()
+end = time.time()
 
-print min_path
-print "Time taken: ", end-start, " s"
+print(min_path)
+print("Time taken: ", end-start, "s", sep="")

@@ -2,7 +2,7 @@
 # movements down and to the right are permitted
 # The starting position is in the top-right corner
 
-from time import clock
+import time
 import csv
 
 def get_data():
@@ -13,7 +13,7 @@ def get_data():
             rows.append([int(x) for x in line])
     return rows
 
-start = clock()
+start = time.time()
 
 rows = get_data()
 
@@ -46,7 +46,7 @@ for i in range(len(rows)-2,-1,-1):
         x += 1
         y -= 1
 
-end = clock()
+end = time.time()
 
-print rows[0][0]
-print "Time taken: ", end-start, " s"
+print(rows[0][0])
+print("Time taken: ", end-start, "s", sep="")

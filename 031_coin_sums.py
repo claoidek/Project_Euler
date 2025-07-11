@@ -3,7 +3,7 @@
 # Finds the number of different combinations of coins that can be used
 # to make £2
 
-from time import clock
+import time
 
 # Recursive function explores the tree of possible combinations
 def add_coin(total,combinations,max_coin):
@@ -21,12 +21,12 @@ def add_coin(total,combinations,max_coin):
                 combinations = add_coin(total+coin,combinations,coin)
     return combinations
 
-start = clock()
+start = time.time()
 
 coins = [200,100,50,20,10,5,2,1]
 combinations = add_coin(0,0,200)
 
-end = clock()
+end = time.time()
 
-print combinations
-print "Time taken: ", end-start, " s"
+print(combinations)
+print("Time taken: ", end-start, "s", sep="")

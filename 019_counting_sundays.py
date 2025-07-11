@@ -2,7 +2,7 @@
 # century
 # This one is hacked together and can definitely be improved
 
-from time import clock
+import time
 
 def increment_day(current_date):
     # Increment day of week
@@ -34,7 +34,7 @@ def is_leap_year(year):
     else:
         return False
 
-start = clock()
+start = time.time()
 
 # Number of days in each month (not counting leap years)
 days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
@@ -50,7 +50,7 @@ while current_date[1:] != [30,11,2000]:
     if current_date[3] > 1900 and current_date[:2] == [6,0]:
         sunday_firsts += 1
 
-end = clock()
+end = time.time()
 
-print sunday_firsts
-print "Time taken: ", end-start, " s"
+print(sunday_firsts)
+print("Time taken: ", end-start, "s", sep="")

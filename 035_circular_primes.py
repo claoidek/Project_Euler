@@ -2,7 +2,7 @@
 # primes.
 # For example: 197, 971, and 719 are all prime.
 
-from time import clock
+import time
 import itertools
 
 def is_prime(num):
@@ -36,7 +36,7 @@ def check_cycles(cycles):
 
     return True
 
-start = clock()
+start = time.time()
 
 candidates = set()
 circ_primes = {2,3,5,7}
@@ -61,7 +61,7 @@ for number in candidates:
         for cycle in cycles:
             rejected.add(cycle)
 
-end = clock()
+end = time.time()
 
-print len(circ_primes)
-print "Time taken: ", end-start, " s"
+print(len(circ_primes))
+print("Time taken: ", end-start, "s", sep="")

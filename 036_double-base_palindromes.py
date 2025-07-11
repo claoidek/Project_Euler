@@ -1,7 +1,7 @@
 # Finds the sum of all numbers less than a million that are palindromes in both
 # base 10 and base 2
 
-from time import clock
+import time
 
 def is_palindrome(num):
     if str(num)==str(num)[::-1]:
@@ -28,7 +28,7 @@ def b10_to_b2(num):
 
     return int("".join([str(x) for x in b2_rep]))
 
-start = clock()
+start = time.time()
 
 total = 0
 
@@ -39,7 +39,7 @@ for i in range(1,1000001,2):
         if is_palindrome(b10_to_b2(i)):
             total += i
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

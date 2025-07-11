@@ -1,9 +1,9 @@
 # Finds the difference between the first pair of pentagonal numbers whose
 #difference and sum are also pentagonal
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 # All pentagonal numbers found so far
 pent_nums = set()
@@ -36,7 +36,7 @@ while not found:
                 pent_sums[pent + smaller_pent] = pent - smaller_pent
 
 
-end = clock()
+end = time.time()
 
-print diff
-print "Time taken: ", end-start, " s"
+print(diff)
+print("Time taken: ", end-start, "s", sep="")

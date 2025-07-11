@@ -1,7 +1,7 @@
 # Finds the first triangular number with over 500 divisors
 # A little slow. The divisors function could be improved.
 
-from time import clock
+import time
 
 def divisors(num):
     num_divisors = 0
@@ -16,17 +16,17 @@ def divisors(num):
 
     return num_divisors
 
-start = clock()
+start = time.time()
 
 threshold = 500
 num_divisors = 0
 n = 1
 
 while num_divisors <= threshold:
-    triangle = n*(n+1)/2
+    triangle = n*(n+1)//2
     num_divisors = divisors(triangle)
     n += 1
-end = clock()
+end = time.time()
 
-print triangle
-print "Time taken: ", end-start, " s"
+print(triangle)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,7 +1,7 @@
 # Finds all primes such that recursively removing digits from either end results
 # in only other primes
 
-from time import clock
+import time
 
 def is_prime(num):
     if num <= 1:
@@ -17,7 +17,7 @@ def is_prime(num):
         i += 2
     return True
 
-start = clock()
+start = time.time()
 
 num_primes = 0
 total = 0
@@ -55,7 +55,7 @@ while num_primes < 11:
         num_primes += 1
         total += number
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

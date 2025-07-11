@@ -5,13 +5,13 @@
 # ...
 # The concatenation of digits 8,9,10 is divisible by the seventh prime
 
-from time import clock
+import time
 import itertools
 
 def atoi(perm):
     return int("".join([str(x) for x in perm]))
 
-start = clock()
+start = time.time()
 
 total = 0
 for perm in itertools.permutations([0,1,2,3,4,5,6,7,8,9]):
@@ -36,7 +36,7 @@ for perm in itertools.permutations([0,1,2,3,4,5,6,7,8,9]):
         continue
     total += atoi(perm)
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

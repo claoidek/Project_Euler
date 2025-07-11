@@ -13,10 +13,10 @@
 # non-primitive triple a*k,b*k,c*k, we would need abs(2*a*k - c*k) = 1
 # This implies abs(2*a-c) = 1/k, which is impossible for k>1 since a and c are
 # integers
-from time import clock
+import time
 from math import sqrt
 
-start = clock()
+start = time.time()
 
 max_perim = 1000000000
 total = 0
@@ -51,7 +51,7 @@ while 4*m*m <= max_perim:
             total += 2*c + 2*base
     m += 1
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

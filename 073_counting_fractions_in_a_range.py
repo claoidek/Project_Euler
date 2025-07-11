@@ -1,7 +1,7 @@
 # Finds the number of reduced proper fractions with denominator <= 12000 that
 # fall between 1/2 and 1/3
 
-from time import clock
+import time
 
 # Uses the formula for finding consecutive terms of Farey sequences here:
 # https://en.wikipedia.org/wiki/Farey_sequence#Next_term
@@ -19,16 +19,16 @@ def farey_function(n):
     count = -2
     # Stop when we get to 1/2
     while float(c)/d <= 0.5:
-        k = (n + b)/d
+        k = (n + b)//d
         a, b, c, d = c, d, (k*c-a), (k*d-b)
         count += 1
     return count
 
-start = clock()
+start = time.time()
 
 answer = farey_function(12000)
 
-end = clock()
+end = time.time()
 
-print answer
-print "Time taken: ", end-start, " s"
+print(answer)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,15 +1,15 @@
 # Finds the smallest member of the longest chain of amicable numbers with no
 # member exceeding one million
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 upper_limit = 10**6
 sum_of_divisors = [1 for i in range(upper_limit + 1)]
 
 # Sieve generating the sum of proper divisors for all numbers up to the limit
-for i in range(2,upper_limit/2 + 1):
+for i in range(2,upper_limit//2 + 1):
     for j in range(2*i,upper_limit,i):
         sum_of_divisors[j] += i
 
@@ -41,8 +41,8 @@ for i in range(1,upper_limit+1):
         longest_length = length
         longest_chain = list(chain)
 
-end = clock()
+end = time.time()
 
-print min(longest_chain)
-print "Time taken: ", end-start, " s"
+print(min(longest_chain))
+print("Time taken: ", end-start, "s", sep="")
 

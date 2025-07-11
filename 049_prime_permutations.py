@@ -7,7 +7,7 @@
 # One of the sequences is 1487,4817,8147
 # This program finds the other
 
-from time import clock
+import time
 import itertools
 
 def is_prime(num):
@@ -18,7 +18,7 @@ def is_prime(num):
             return False
     return True
 
-start = clock()
+start = time.time()
 
 # Create a list of all primes with four digits or less
 primes = [2]
@@ -44,8 +44,8 @@ for key in anagram_dict:
     if len(anagram_dict[key]) > 3:
         for a,b in itertools.combinations(sorted(anagram_dict[key]),2):
             if 2*b - a in anagram_dict[key] and a != 1487:
-                print str(a) + str(b) + str(2*b - a)
+                print(str(a) + str(b) + str(2*b - a))
 
-end = clock()
+end = time.time()
 
-print "Time taken: ", end-start, " s"
+print("Time taken: ", end-start, "s", sep="")

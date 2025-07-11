@@ -5,9 +5,9 @@
 # This value is then multiplied by the name's its position in the alphabetical 
 # list to determine the score of that name
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 f = open("external_files/022_names.txt","r")
 names = f.read().split(",")
@@ -20,7 +20,7 @@ total = 0
 for position, name in enumerate(names):
     total += (position+1)*sum(ord(i)-64 for i in name[1:-1])
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

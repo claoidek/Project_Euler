@@ -1,10 +1,10 @@
 # Finds the number of positive integers below 10^100 that have either
 # monotonically increasing or decreasing digits (non-bouncy numbers)
 
-from time import clock
+import time
 import copy
 
-start = clock()
+start = time.time()
 
 max_num_digits = 100
 # Single digit numbers are all non-bouncy
@@ -46,7 +46,7 @@ for digits in range(2,max_num_digits + 1):
         current_decreasing[start_digit] = 0
         current_increasing[start_digit] = 0
 
-end = clock()
+end = time.time()
 
-print num_non_bouncy
-print "Time taken: ", end-start, " s"
+print(num_non_bouncy)
+print("Time taken: ", end-start, "s", sep="")

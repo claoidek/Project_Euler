@@ -3,7 +3,7 @@
 # Each digit must be used exactly once
 # The operators +,-,*,/ are allowed
 
-from time import clock
+import time
 import itertools
 
 # Performs the specified operation on a and b
@@ -24,7 +24,7 @@ def calc(a,b,op):
             # division
             return a + 0.123456
 
-start = clock()
+start = time.time()
 
 longest = 0
 
@@ -56,7 +56,7 @@ for digits in itertools.combinations(range(1,10),4):
                 solution = "".join([str(x) for x in digits])
             break
 
-end = clock()
+end = time.time()
 
-print solution
-print "Time taken: ", end-start, " s"
+print(solution)
+print("Time taken: ", end-start, "s", sep="")

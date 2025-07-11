@@ -1,8 +1,8 @@
 # Finds the unique number whose square is in the form 1_2_3_4_5_6_7_8_9_0
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 # For the square to be a 19 digit number, the number itself must have 10 digits
 i = 10**9 + 30
@@ -17,7 +17,7 @@ while i < 10**10:
     else:
         i += 60
 
-end = clock()
+end = time.time()
 
-print i
-print "Time taken: ", end-start, " s"
+print(i)
+print("Time taken: ", end-start, "s", sep="")

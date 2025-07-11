@@ -2,13 +2,13 @@
 # their first incorrect terms
 # More details can be found here: https://projecteuler.net/problem=101
 
-from time import clock
+import time
 from numpy import polyfit
 
 def polynomial(n):
     return 1 - n + n**2 - n**3 + n**4 - n**5 + n**6 - n**7 + n**8 - n**9 + n**10
 
-start = clock()
+start = time.time()
 
 total = 0
 sequence = []
@@ -32,7 +32,7 @@ for k in range(1,degree+1):
             total += int(term)
             break
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,8 +1,8 @@
 # Calculates the number of characters needed to write the numbers 1 to 1000 in words
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 # Occurences of each word
 letter_counts = {
@@ -56,7 +56,7 @@ characters = 0
 for word in letter_counts:
     characters += len(word)*letter_counts[word]
 
-end = clock()
+end = time.time()
 
-print characters
-print "Time taken: ", end-start, " s"
+print(characters)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,7 +1,7 @@
 # Finds the 10000th of the first 100000 numbers when sorted first by the product
 # of their distinct prime factors, and then by the numbers themselves
 
-from time import clock
+import time
 import math
 
 def prime_sieve(n):
@@ -32,7 +32,7 @@ def process_factors(factor_set):
                 new_set.append((prime,) + factors)
     return new_set
 
-start = clock()
+start = time.time()
 
 upper_limit = 100000
 # Index of the term we're looking for in the final sorted list
@@ -66,7 +66,7 @@ for num_factors in range(2, max_factors + 1):
 # Sorts the output and locates the correct term
 answer = sorted(radicals.items(), key=lambda x: (x[1],x[0]))[term-1][0]
 
-end = clock()
+end = time.time()
 
-print answer
-print "Time taken: ", end-start, " s"
+print(answer)
+print("Time taken: ", end-start, "s", sep="")

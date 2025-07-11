@@ -1,7 +1,7 @@
 # Finds all numbers under fifty million that can be written as the sum of a
 # prime square, prime cube, and prime fourth power
 
-from time import clock
+import time
 
 def prime_sieve(n):
     sieve = [True] * n
@@ -10,7 +10,7 @@ def prime_sieve(n):
             sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
     return [2] + [i for i in range(3,n,2) if sieve[i]]
 
-start = clock()
+start = time.time()
 
 primes = prime_sieve(7071)
 
@@ -35,7 +35,7 @@ for prime_square in prime_squares:
             else:
                 break
 
-end = clock()
+end = time.time()
 
-print len(found)
-print "Time taken: ", end-start, " s"
+print(len(found))
+print("Time taken: ", end-start, "s", sep="")

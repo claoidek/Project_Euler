@@ -1,9 +1,9 @@
 # Finds the number of integers below one billion that can be added to their
 # reverse to produce a number with only odd digits
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 reversibles = 0
 
@@ -84,12 +84,12 @@ reversibles = 0
 
 for num_digits in range(1,10):
     if num_digits%2 == 0:
-        reversibles += 20*30**(num_digits/2 - 1)
+        reversibles += 20*30**(num_digits//2 - 1)
     elif num_digits%4 == 3:
-        k = (num_digits - 3)/4
+        k = (num_digits - 3)//4
         reversibles += 100*500**k
 
-end = clock()
+end = time.time()
 
-print reversibles
-print "Time taken: ", end-start, " s"
+print(reversibles)
+print("Time taken: ", end-start, "s", sep="")

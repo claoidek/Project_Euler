@@ -1,7 +1,7 @@
 # Finds the sum of all numbers under 10^8 that are both palindromes and can be
 # written as the sum of consecutive squares
 
-from time import clock
+import time
 
 # Creates palindromes by concatenating numbers with their reverses, as well as
 # the reverse of all but their last digit
@@ -23,7 +23,7 @@ def check_square_sum(n):
         root += 1
     return False
 
-start = clock()
+start = time.time()
 
 palindromes = {1,2,3,4,5,6,7,8,9}
 total = 0
@@ -47,7 +47,7 @@ while root*root + (root + 1)*(root + 1) < 10**8:
         next_root += 1
     root += 1
 
-end = clock()
+end = time.time()
 
-print sum(found)
-print "Time taken: ", end-start, " s"
+print(sum(found))
+print("Time taken: ", end-start, "s", sep="")

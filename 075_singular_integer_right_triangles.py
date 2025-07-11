@@ -3,9 +3,9 @@
 # Uses Euclid's Formula:
 # https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 # Set of all triples with perimeter <= 1500000
 triples = set()
@@ -45,7 +45,7 @@ for L in perims:
     if perims[L] == 1:
         total += 1
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

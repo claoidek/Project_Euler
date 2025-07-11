@@ -3,7 +3,7 @@
 # This is done until a term would be repeated
 # This program finds all such chains that have a length of 60
 
-from time import clock
+import time
 
 def factorial_sum(num):
     total = 0
@@ -34,7 +34,7 @@ def chain_length(num,prev):
         master[digits] = length
     return length
 
-start = clock()
+start = time.time()
 
 # Stores the chain length for each combination of digits
 master = {}
@@ -47,7 +47,7 @@ for i in range(1000000):
     if chain_length(i,[i]) == 60:
         sixties += 1
 
-end = clock()
+end = time.time()
 
-print sixties
-print "Time taken: ", end-start, " s"
+print(sixties)
+print("Time taken: ", end-start, "s", sep="")

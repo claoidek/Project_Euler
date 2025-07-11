@@ -1,13 +1,13 @@
 # Prints the last ten digits of the number 28433*2^7830457 + 1
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 answer = (28433*2**7830457+1)%10000000000
 
-end = clock()
+end = time.time()
 
-print answer
-print "Time taken: ", end-start, " s"
+print(answer)
+print("Time taken: ", end-start, "s", sep="")
 

@@ -3,7 +3,7 @@
 # This program returns the first number for which the proportion of bouncy
 # numbers less than or equal to it is 99%
 
-from time import clock
+import time
 
 def is_bouncy(num):
     # If a number starts with a bouncy number, then it too will be bouncy
@@ -27,7 +27,7 @@ def is_bouncy(num):
                 tracker = 2
     return False
 
-start = clock()
+start = time.time()
 
 # We are told that the proportion of bouncy numbers for 21780 is 90% so we can
 # start from there
@@ -44,7 +44,7 @@ while 100*bouncy/num != 99:
 
 
 
-end = clock()
+end = time.time()
 
-print num
-print "Time taken: ", end-start, " s"
+print(num)
+print("Time taken: ", end-start, "s", sep="")

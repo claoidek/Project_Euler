@@ -1,8 +1,8 @@
 # Finds the sum of the maximum remainders produced when (a-1)^n+(a+1)^n is
 # divided by a^2, in the range 3<=a<=1000
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 sum_rmax = 0
 
@@ -15,9 +15,9 @@ sum_rmax = 0
 # n=(a-1)/2. (We want n to be as big as possible without going over the boundary
 # of n=a/2). Therefore, the maximum value of the remainder 2an is 2a((a-1)/2)
 for a in range(3,1001):
-    sum_rmax += 2*a*((a - 1)/2)
+    sum_rmax += 2*a*((a - 1)//2)
 
-end = clock()
+end = time.time()
 
-print sum_rmax
-print "Time taken: ", end-start, " s"
+print(sum_rmax)
+print("Time taken: ", end-start, "s", sep="")

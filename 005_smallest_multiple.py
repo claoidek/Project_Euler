@@ -1,6 +1,6 @@
 # Finds the smallest number that is evenly divisible by all numbers from 1 to 20
 
-from time import clock
+import time
 
 def prime_factors(num):
     factors = {}
@@ -15,7 +15,7 @@ def prime_factors(num):
         i += 1
     return factors
 
-start = clock()
+start = time.time()
 
 num = 1
 upper_bound = 20
@@ -42,7 +42,7 @@ for i in range(2,upper_bound+1):
 for factor in all_factors:
     num *= factor**all_factors[factor]
 
-end = clock()
+end = time.time()
 
-print num
-print "Time taken: ", end-start, " s"
+print(num)
+print("Time taken: ", end-start, "s", sep="")

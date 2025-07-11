@@ -1,10 +1,10 @@
 # Finds the sum of all pairs of numbers where d(a) = b and d(b) = a
 # d(a) is defined as the sum of all proper divisors of a
 
-from time import clock
+import time
 import math
 
-start = clock()
+start = time.time()
 
 def sum_of_proper_divisors(n):
     total = 1
@@ -26,11 +26,11 @@ possible_pairs = {}
 for i in range(1,10001):
     possible_pairs[i] = sum_of_proper_divisors(i)
 
-for key,value in possible_pairs.iteritems():
+for key,value in possible_pairs.items():
     if value != key and value <= 10000 and possible_pairs[value] == key:
         amicable_total += key
 
-end = clock()
+end = time.time()
 
-print amicable_total
-print "Time taken: ", end-start, " s"
+print(amicable_total)
+print("Time taken: ", end-start, "s", sep="")

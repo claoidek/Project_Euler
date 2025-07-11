@@ -7,7 +7,7 @@
 # It's pretty slow but improving it would involve implementing an entirely
 # different algorithm so this will do for now
 
-from time import clock
+import time
 
 def get_grid(grid_number):
     new_grid = list(lines[grid_number*10-9:grid_number*10])
@@ -24,19 +24,19 @@ def get_column(i,grid):
 def get_box(i,grid):
     output = []
     column_start = (i%3)*3
-    row_start = (i/3)*3
+    row_start = (i//3)*3
     output.extend(grid[row_start][column_start:column_start+3])
     output.extend(grid[row_start+1][column_start:column_start+3])
     output.extend(grid[row_start+2][column_start:column_start+3])
     return output
 
 def get_box_num(row_num,column_num):
-    row_third = row_num/3
-    column_third = column_num/3
+    row_third = row_num//3
+    column_third = column_num//3
     return row_third*3 + column_third
 
 def cell_to_row_column(cell):
-    return cell/9,cell%9
+    return cell//9,cell%9
 
 def row_column_to_cell(row_num,column_num):
     return row_num*9+column_num
@@ -77,7 +77,7 @@ def solve(grid):
             if check_validity(grid,cell_num):
                 index += 1
 
-start = clock()
+start = time.time()
 
 with open("external_files/096_sudoku.txt") as f:
     lines = f.readlines()
@@ -93,7 +93,7 @@ for grid_number in range(1,num_grids+1):
     solve(grid)
     total += grid[0][0]*100 + grid[0][1]*10 + grid[0][2]
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

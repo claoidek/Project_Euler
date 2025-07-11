@@ -1,7 +1,7 @@
 # finds the smallest value of n for which the number of ways that n objects can
 # be separated into piles is divisible by a million
 
-from time import clock
+import time
 
 
 # This is Euler's generating function for partition numbers, which is formula 14
@@ -20,7 +20,7 @@ def partition(n):
     partitions[n] = total%1000000
     return total%1000000
 
-start = clock()
+start = time.time()
 
 partitions = {0:1}
 
@@ -29,7 +29,7 @@ i = 1
 while partition(i) != 0:
     i += 1
 
-end = clock()
+end = time.time()
 
-print i
-print "Time taken: ", end-start, " s"
+print(i)
+print("Time taken: ", end-start, "s", sep="")

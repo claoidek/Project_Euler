@@ -3,7 +3,7 @@
 # For example, the smallest family of 7 primes is (56003, 56113, 56333, 56443,
 # 56663, 56773, 56993)
 
-from time import clock
+import time
 
 def is_prime(num):
     if num == 1:
@@ -25,7 +25,7 @@ def generate_primes(num_digits):
             n_digit_primes.append(i)
     return n_digit_primes
 
-start = clock()
+start = time.time()
 
 primes = [2,3,5,7]
 
@@ -112,7 +112,7 @@ while not found:
 
     num_digits += 1
 
-end = clock()
+end = time.time()
 
-print min(smallest_of_set)
-print "Time taken: ", end-start, " s"
+print(min(smallest_of_set))
+print("Time taken: ", end-start, "s", sep="")

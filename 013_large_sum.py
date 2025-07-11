@@ -1,8 +1,8 @@
 # Finds the first ten digits of the sum of the numbers below
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 numbers =  [37107287533902102798797998220837590246510135740250,
             46376937677490009712648124896970078050417018260538,
@@ -107,7 +107,7 @@ numbers =  [37107287533902102798797998220837590246510135740250,
 
 answer = str(sum(numbers))[:10]
 
-end = clock()
+end = time.time()
 
-print answer
-print "Time taken: ", end-start, " s"
+print(answer)
+print("Time taken: ", end-start, "s", sep="")

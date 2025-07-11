@@ -3,7 +3,7 @@
 
 # This problem uses identical logic to problem 120
 
-from time import clock
+import time
 
 def prime_sieve(n):
     sieve = [True] * n
@@ -12,7 +12,7 @@ def prime_sieve(n):
             sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
     return [2] + [i for i in range(3,n,2) if sieve[i]]
 
-start = clock()
+start = time.time()
 
 remainder = 10**10
 primes = prime_sieve(1000000)
@@ -27,7 +27,7 @@ for index, prime in enumerate(primes[0::2]):
     if 2*prime*(2*index+1) > remainder:
         break
 
-end = clock()
+end = time.time()
 
-print 2*index+1
-print "Time taken: ", end-start, " s"
+print(2*index+1)
+print("Time taken: ", end-start, "s", sep="")

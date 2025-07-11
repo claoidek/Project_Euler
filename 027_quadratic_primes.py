@@ -2,7 +2,7 @@
 # n^2 + a*n + b gives the longest possible string of primes, starting from n=0
 # The program returns the product a*b.
 
-from time import clock
+import time
 
 def is_prime(num):
     if num <= 1:
@@ -18,7 +18,7 @@ def is_prime(num):
         i += 2
     return True
 
-start = clock()
+start = time.time()
 
 max_n = 0
 max_a = 9999
@@ -34,7 +34,7 @@ for a in range(-999,1000):
             max_a = a
             max_b = b
 
-end = clock()
+end = time.time()
 
-print max_a*max_b
-print "Time taken: ", end-start, " s"
+print(max_a*max_b)
+print("Time taken: ", end-start, "s", sep="")

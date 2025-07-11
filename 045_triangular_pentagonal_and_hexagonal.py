@@ -2,7 +2,7 @@
 # hexagonal
 # All hexagonal numbers are triangular so we don't need to test for that
 
-from time import clock
+import time
 import math
 
 # Simple test for square numbers
@@ -12,7 +12,7 @@ def is_square(n):
         return True
     return False
 
-start = clock()
+start = time.time()
 
 num = 40755
 n = 143
@@ -26,7 +26,7 @@ while not found:
     if is_square(24*num + 1) and math.sqrt(24*num + 1)%6 == 5:
         found = True
 
-end = clock()
+end = time.time()
 
-print num
-print "Time taken: ", end-start, " s"
+print(num)
+print("Time taken: ", end-start, "s", sep="")

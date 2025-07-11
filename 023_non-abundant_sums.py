@@ -4,7 +4,7 @@
 # All numbers over 28123 can be represented as the sum of two abundant numbers
 # so we do not check numbers over this limit.
 
-from time import clock
+import time
 
 def sum_of_proper_divisors(n):
     total = 1
@@ -20,7 +20,7 @@ def sum_of_proper_divisors(n):
 
     return total
 
-start = clock()
+start = time.time()
 
 lowest_abundant_number = 12
 upper_limit = 28123
@@ -41,7 +41,7 @@ for i in range(1,upper_limit+1):
     if i not in abundant_sums:
         total += i
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,8 +1,8 @@
 # Finds all the n-digit positive integers that are also an nth power
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 total = 0
 i = 1
@@ -15,7 +15,7 @@ while len(str(9**i)) >= i:
             total += 1
     i += 1
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

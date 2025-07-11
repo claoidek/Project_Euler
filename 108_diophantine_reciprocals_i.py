@@ -23,7 +23,7 @@
 # This means that the number of divisors of n^n is: 
 # (2*a1 + 1)*(2*a2 + 1)*...*(2*ak + 1)
 
-from time import clock
+import time
 
 def prime_factors(num):
     factors = []
@@ -48,7 +48,7 @@ def prime_factors(num):
     dictionary[original] = factors
     return factors
 
-start = clock()
+start = time.time()
 
 
 primes = [2,3]
@@ -67,7 +67,7 @@ while num_divisors <= 1999:
     for prime in set(factors):
         num_divisors *= 2*factors.count(prime) + 1
 
-end = clock()
+end = time.time()
 
-print n
-print "Time taken: ", end-start, " s"
+print(n)
+print("Time taken: ", end-start, "s", sep="")

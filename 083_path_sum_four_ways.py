@@ -5,7 +5,7 @@
 # This is solved using the A* search algorithm, which is described here:
 # https://en.wikipedia.org/wiki/A*_search_algorithm
 
-from time import clock
+import time
 import csv
 
 def get_data():
@@ -91,7 +91,7 @@ def a_star(beginning,goal):
             fscore[tuple(neighbour)] = gscore[tuple(neighbour)] + \
                     cost_estimate(neighbour,goal)
 
-start = clock()
+start = time.time()
 
 rows = get_data()
 
@@ -107,7 +107,7 @@ goal = [len(rows)-1,len(rows)-1]
 optimal = a_star(beginning,goal)
 score = sum([rows[node[1]][node[0]] for node in optimal])
 
-end = clock()
+end = time.time()
 
-print score
-print "Time taken: ", end-start, " s"
+print(score)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,7 +1,7 @@
 # Finds the prime below one million that can be written as the sum of the most
 # consecutive primes
 
-from time import clock
+import time
 
 def is_prime(num):
     for prime in primes:
@@ -11,7 +11,7 @@ def is_prime(num):
             return False
     return True
 
-start = clock()
+start = time.time()
 
 primes = [2]
 for i in range(3,1000000,2):
@@ -33,7 +33,7 @@ for index, start_num in enumerate(primes):
             longest_chain = chain
             answer = total
 
-end = clock()
+end = time.time()
 
-print answer
-print "Time taken: ", end-start, " s"
+print(answer)
+print("Time taken: ", end-start, "s", sep="")

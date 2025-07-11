@@ -2,10 +2,10 @@
 # than on 6 cubic (6-sided) dice
 
 from __future__ import division
-from time import clock
+import time
 import itertools
 
-start = clock()
+start = time.time()
 
 p_totals = {}
 num_p_perms = 0
@@ -40,8 +40,8 @@ for c_total in c_totals:
             higher += p_totals[p_total]
     prob += (c_totals[c_total]*higher)/(num_p_perms*num_c_perms)
 
-end = clock()
+end = time.time()
 
 # Print to 7 decimal places
-print '%.7f' % prob
-print "Time taken: ", end-start, " s"
+print('%.7f' % prob)
+print("Time taken: ", end-start, "s", sep="")

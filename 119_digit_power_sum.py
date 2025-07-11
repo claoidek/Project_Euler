@@ -1,7 +1,7 @@
 # Finds the 30th entry in the sequence of numbers that are equal to the sum of
 # their digits raised to some power
 
-from time import clock
+import time
 
 def sum_of_digits(num):
     return sum([int(x) for x in str(num)])
@@ -14,7 +14,7 @@ def add_to_list(num):
         valid_nums.add(num)
         upper_limit = max(valid_nums)
 
-start = clock()
+start = time.time()
 
 upper_limit = 999999999999999
 
@@ -34,7 +34,7 @@ for base in range(2,101):
         if sum_of_digits(large_num) == base:
             add_to_list(large_num)
 
-end = clock()
+end = time.time()
 
-print max(valid_nums)
-print "Time taken: ", end-start, " s"
+print(max(valid_nums))
+print("Time taken: ", end-start, "s", sep="")

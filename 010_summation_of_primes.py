@@ -1,6 +1,6 @@
 # Finds the sum of all primes below 2 million
 
-from time import clock
+import time
 
 def is_prime(num):
     for prime in primes:
@@ -10,7 +10,7 @@ def is_prime(num):
             return False
     return True
 
-start = clock()
+start = time.time()
 
 upper_bound = 2000000
 primes = [2]
@@ -23,7 +23,7 @@ while num < upper_bound:
         total += num
     num += 2
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

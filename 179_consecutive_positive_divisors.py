@@ -1,10 +1,10 @@
 # Finds the number of integers 1 < n < 10^7 for which n and n+1 have the same
 # number of divisors
 
-from time import clock
+import time
 import math
 
-start = clock()
+start = time.time()
 
 limit = 10**7
 num_divisors = [0]*(limit + 1)
@@ -20,7 +20,7 @@ for i in range(2,int(math.sqrt(limit)) + 1):
 
 total = sum(num_divisors[i] == num_divisors[i - 1] for i in range(3,limit))
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

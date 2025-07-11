@@ -1,14 +1,14 @@
 # Finds the optimum special sum set for n = 7
 # Special sum sets are defined here: https://projecteuler.net/problem=103
 
-from time import clock
+import time
 import math
 import itertools
 
 # Method for finding a near optimum special sum set from the optimum special sum
 # set for the preceding n
 def near_optimum_set(previous_set):
-    middle = previous_set[len(previous_set)/2]
+    middle = previous_set[len(previous_set)//2]
     output = [middle]
     for entry in previous_set:
         output.append(entry + middle)
@@ -21,7 +21,7 @@ def is_special(test_set):
 
     # Check if B containing more elements than C implies S(B)>S(C)
     upper_mid = int(math.ceil(len(test_set)/2.))
-    lower_mid = len(test_set)/2
+    lower_mid = len(test_set)//2
     for i in range(2,upper_mid + 1):
         if sum(test_set[:i]) <= sum(test_set[-(i-1):]):
             return False
@@ -38,7 +38,7 @@ def is_special(test_set):
     return True
     
     
-start = clock()
+start = time.time()
 
 # The optimum special sum set for n = 6
 optimum_six = [11,18,19,20,22,25]
@@ -58,7 +58,7 @@ for delta in itertools.product(range(-3,4),repeat=len(initial_guess)):
         min_sum = sum(test_set)
         best_set = test_set
 
-end = clock()
+end = time.time()
 
-print "".join([str(x) for x in best_set])
-print "Time taken: ", end-start, " s"
+print("".join([str(x) for x in best_set]))
+print("Time taken: ", end-start, "s", sep="")

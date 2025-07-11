@@ -1,9 +1,9 @@
 # Finds the product a*b*c where a^2 + b^2 = c^2 and a + b + c = 1000
 # Uses Euclid's Formula (https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple)
 
-from time import clock
+import time
 
-start = clock()
+start = time.time()
 
 found = False
 m = 2
@@ -27,7 +27,7 @@ while not found:
             break
     m += 1
 
-end = clock()
+end = time.time()
 
-print a*b*c
-print "Time taken: ", end-start, " s"
+print(a*b*c)
+print("Time taken: ", end-start, "s", sep="")

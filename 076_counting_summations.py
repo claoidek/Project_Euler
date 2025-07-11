@@ -1,7 +1,7 @@
 # Finds the number of ways one hundred can be written as a sum of at least two
 # positive integers
 
-from time import clock
+import time
 
 # This is Euler's generating function for partition numbers, which is formula 14
 # here:
@@ -18,7 +18,7 @@ def partition(n):
     partitions[n] = total
     return total
 
-start = clock()
+start = time.time()
 
 partitions = {0:1}
 
@@ -26,7 +26,7 @@ partitions = {0:1}
 # that from the total
 total = partition(100)-1
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")

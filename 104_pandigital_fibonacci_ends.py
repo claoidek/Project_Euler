@@ -1,14 +1,14 @@
 # Finds the index of the first Fibonacci number whose first 9 digits and last 9
 # digits are both 1-9 pandigital
 
-from time import clock
+import time
 
 def is_pandigital(num):
     if len(num) == len(set(num)) and "0" not in num:
         return True
     return False
 
-start = clock()
+start = time.time()
 
 first = 0
 second = 1
@@ -39,7 +39,7 @@ while True:
     if len(str(start_digits)) > 15:
         start_digits = int(str(start_digits)[:15])
 
-end = clock()
+end = time.time()
 
-print index
-print "Time taken: ", end-start, " s"
+print(index)
+print("Time taken: ", end-start, "s", sep="")

@@ -3,7 +3,7 @@
 # This is very slow. The majority of time is spent finding the pairs of primes
 # that concatenate to form other primes. Everything else runs in less than a
 # second.
-from time import clock
+import time
 import itertools
 
 def prime_sieve(n):
@@ -32,7 +32,7 @@ def is_prime(num):
 def sum_of_digits(num):
     return sum([int(x) for x in str(num)])
 
-start = clock()
+start = time.time()
 
 primes = prime_sieve(8390)
 primes_0 = [3]
@@ -112,7 +112,7 @@ min_sum = 99999999999999999
 for quintet in prime_quintets:
     if sum(quintet) < min_sum:
         min_sum = sum(quintet)
-end = clock()
+end = time.time()
 
-print min_sum
-print "Time taken: ", end-start, " s"
+print(min_sum)
+print("Time taken: ", end-start, "s", sep="")

@@ -1,6 +1,6 @@
 # Finds the number of integers < 10^8 that have exactly two prime factors
 
-from time import clock
+import time
 
 def prime_sieve(n):
     sieve = [True] * n
@@ -9,11 +9,11 @@ def prime_sieve(n):
             sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
     return [2] + [i for i in range(3,n,2) if sieve[i]]
 
-start = clock()
+start = time.time()
 
 limit = 10**8
 
-primes = prime_sieve(limit/2)
+primes = prime_sieve(limit//2)
 
 total = 0
 
@@ -24,7 +24,7 @@ for prime1 in primes:
         total += 1
 
 
-end = clock()
+end = time.time()
 
-print total
-print "Time taken: ", end-start, " s"
+print(total)
+print("Time taken: ", end-start, "s", sep="")
