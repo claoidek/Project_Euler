@@ -20,7 +20,7 @@
 # (a1 + 1)*(a2 + 1)*...*(ak + 1)
 # This is shown in Equation 3 here:
 # http://mathworld.wolfram.com/DivisorFunction.html
-# This means that the number of divisors of n^n is: 
+# This means that the number of divisors of n^2 is: 
 # (2*a1 + 1)*(2*a2 + 1)*...*(2*ak + 1)
 
 import time
